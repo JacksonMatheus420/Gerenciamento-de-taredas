@@ -11,12 +11,18 @@ def mostrar_menu():
     print("5 - Sair")
 
 def adicionar_tarefas():
-    tarefa = input("Digite a nova tarefa: ")
+    while True:
 
-    tarefas.append({"nome": tarefa,
-                   "concluida": False})
+        tarefa = input("Digite a nova tarefa: ")
 
-    print("Tarefa adicionada com sucesso!")
+        tarefas.append({"nome": tarefa,
+                    "concluida": False})
+        print("Tarefa adicionada com sucesso!")
+
+        continuar = input("Adicionar outra? (s/n)")
+
+        if continuar.lower() != "s":
+            break
 
 def listar_tarefas():
     if len(tarefas) == 0:
